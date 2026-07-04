@@ -20,7 +20,7 @@ clean_text = '\n'.join(lines)
 print(clean_text[:2000])
 
 #Save to a file
-with open("output.txt", "w", encoding="utf-8") as f:
+with open("calendar_page.txt", "w", encoding="utf-8") as f:
     f.write(clean_text)
 
 print("Done! Saved to calendar_page.txt")

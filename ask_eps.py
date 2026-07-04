@@ -1,13 +1,22 @@
 import os
+from pathlib import Path
+from dotenv import load_dotenv
 import anthropic
 
+load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
+
+#Key comes from .env - never hardcoded 
 #Read the calendar text we saved yesterday
 
 with open("calendar_page.txt", "r") as f:
     eps_content = f.read()
 
+api_key = os.getenv("ANTHROPIC_API_KEY")
+if not api_key:
+    raise RuntimeError("ANTHROPIC_API_KEY was not found. Add it to the .env file in the project folder.")
+
 #Set up the Anthropic client
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+client = anthropic.Anthropic(api_key=api_key)
 
 #The question we want to ask
 question = "When does school start in the 2026-2027 school year?"
