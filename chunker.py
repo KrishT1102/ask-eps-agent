@@ -3,7 +3,7 @@ from pydoc import text
 
 os.makedirs('data/chunks', exist_ok=True)
 
-def chunk_text(text, chunk_size=400, overlap=50):
+def chunk_text(text, chunk_size=800, overlap=100):
     words = text.split()
     chunks = []
     start = 0
@@ -37,5 +37,5 @@ for filename in os.listdir('data/clean'):
 
 with open('data/chunks/all_chunks.json','w') as f:
     json.dump(all_chunks, f, indent=2)
-    
+
 print(f'Total: {len(all_chunks)} chunks saved')

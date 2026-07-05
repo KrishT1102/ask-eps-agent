@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import os, time
 
-PAGES = {
+PAGES = {   
 "homepage":  "https://www.everettsd.org",
 "calendar":  "https://www.everettsd.org/district-calendar",
 "food_nutrition": "https://www.everettsd.org/food-nutrition-services",
@@ -26,7 +26,7 @@ os.makedirs('data/raw', exist_ok=True)
     
 def scrape_page(name, url):
     try:
-        print(f'Scraping: {os.name}...')
+        print(f'Scraping: {name}...')
         headers = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(url, headers=headers, timeout=10)
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -35,7 +35,7 @@ def scrape_page(name, url):
         text = soup.get_text()
         lines = [l.strip() for l in text.splitlines() if l.strip()]
         clean = '\n'.join(lines)
-        with open(f'data/raw/{os.name}.txt', 'w', encoding='utf-8') as f:
+        with open(f'data/raw/{name}.txt', 'w', encoding='utf-8') as f:
             f.write(f'SOURCE URL: {url}\n')
             f.write(f'PAGE NAME: {name}\n')
             f.write('='*50 + '\n')
