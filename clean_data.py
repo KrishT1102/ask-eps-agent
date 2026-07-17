@@ -1,7 +1,5 @@
 import os
 
-from pyparsing import line
-
 os.makedirs('data/clean', exist_ok=True)
 
 NOISE = ['skip to main','cookie','javascript','sign in',
