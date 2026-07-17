@@ -7,4 +7,6 @@ to find basic information.
 
 ## Solution
 Ask any question, get an instant answer with a citation to the source page.
-## Built By
+
+## How it Works
+Uses an AI Agent to run through the various pages throughout everett public schools website and extracts the information and stores it into a library which is then used to answer questions from the user 
