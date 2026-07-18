@@ -22,7 +22,7 @@ with st.sidebar:
     st.image('https://www.everettsd.org/cms/lib/WA01001955/Centricity/Template/GlobalAssets/images/logos/eps-logo.png',
              width=150)
     st.markdown('### About This App')
-    st.markdown('Built by **Krish [LastName]**')
+    st.markdown('Built by **Krish Thammineni**')
     st.markdown('Rising 11th Grade — Everett Public Schools')
     st.markdown('Summer 2025 Project')
     st.divider()
