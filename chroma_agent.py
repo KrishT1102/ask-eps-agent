@@ -40,11 +40,11 @@ QUESTION: {question}'''}]
 
     return message.content[0].text
 
-# Run all 20 test questions
-
-print('EPS AI Agent — ChromaDB Version')
-print('='*50)
-while True:
-    q = input('\nAsk a question (or type quit): ')
-    if q.lower() == 'quit': break
-    print('\n' + ask_eps(q))
+if __name__ == '__main__':
+    print('EPS AI Agent - ChromaDB Version')
+    print('=' * 50)
+    while True:
+        q = input('\nAsk a question (or type quit): ')
+        if q.lower() == 'quit':
+            break
+        print('\n' + ask_eps(q))
